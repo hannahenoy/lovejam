@@ -1,0 +1,595 @@
+body {
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.428;
+}
+h1{
+  font-weight: 500;
+  line-height: 1.1;
+}
+a{
+ text-decoration: none; 
+ color: blueviolet
+}
+.btn-sm{
+  padding: 5px 10px;
+  line-height: 1.5;
+}
+.btn-default{
+  color: black;
+}
+.btn {
+  display: inline-block;
+}
+
+
+/****** index.ejs - homepage ******/
+nav{
+  margin-bottom: 10px;
+}
+#box {
+  width: 450px;
+  height: 400px;
+  box-shadow: 15px 15px white;
+  color: black;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: rgb(160,196,207);
+  margin: 15px auto;
+  margin-top: 200px;
+  text-align: center;
+}
+/* h1 title */
+.homepage {
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+}
+/* login and sign up buttons */
+.btn-default {
+  width: 110px;
+  font-weight: 400;
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 15px;
+  margin-top: 5%;
+  margin-left: 4px;
+  margin-right: 4px;
+  box-shadow: 4px 4px black;
+  border: 1px solid rgb(100, 18, 120);
+  background: lightcyan;
+  border-radius: 100px;
+}
+
+
+/****** profile.ejs  ******/
+
+/* email + logout */
+header, .header {
+  margin-bottom: 10px;
+  font-weight: bolder;
+  color: white;
+  text-align: center;
+}
+
+/*** template for boxes ***/
+.left {
+  height: 540px;
+  box-shadow: 20px 20px rgba(241,117,159);
+  overflow: scroll;
+  /* padding: 10px; */
+  border-radius: 20px;
+  background-color: black;
+  color:rgba(241,117,159);
+  margin: 15px auto;
+}
+/* info headers for each page */
+.info{
+  text-align: center;
+  margin:1px auto;
+}
+
+
+.h1 {
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 30px;
+  color: black;
+  background-color: rgba(241,117,159);
+  width: 200px;
+  margin:5px auto;
+  font-weight: 500;
+  line-height: 1.1;
+
+}
+/* songs submission form */
+#msgs{
+  width: 346px;
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 14px;
+  color:  rgb(4, 3, 3);
+  border: 1px solid rgb(232, 232, 232);
+  background: rgb(205, 205, 205);
+  border-radius: 100px;
+  margin:15px auto;
+  margin-bottom: 0;
+}
+#songsSubmissions{
+  list-style: none;
+  padding-top: 2%;
+  margin: 2px auto;
+}
+#songForm{
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+/* lists for media */
+.songList {
+  list-style: none;
+  padding-top: 2%;
+  margin: 2px auto;
+}
+/* new/saved images */
+
+/* MUSIC PLAYER HOMEPAGE */
+footer{
+  /* background: rgb(217, 150, 161); */
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+}
+body {
+  /* background-image: linear-gradient(
+    0deg,
+    rgba(247, 247, 247, 1) 23.8%,
+    rgba(252, 221, 221, 1) 92%
+  ); */
+  background: -webkit-linear-gradient(rgb(252, 221, 221, 1),rgb(247, 247, 247, 1));
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+.music-container {
+  background-color: rgb(39, 39, 39);
+  opacity: .9;
+  box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
+  display: flex;
+  padding: 20px 30px;
+  position: relative;
+  z-index: 10;
+}
+
+.img-container {
+  position: relative;
+  width: 110px;
+}
+
+.img-container::after {
+  content: '';
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, 50%);
+}
+
+.img-container img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 110px;
+  width: inherit;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: rotate 3s linear infinite;
+
+  animation-play-state: paused;
+}
+
+.music-container.play .img-container img {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.action-btn {
+  background-color: rgba(39, 39, 39);
+  border: 0;
+  color: #dfdbdf;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.action-btn.action-btn-big {
+  color: #cdc2d0;
+  font-size: 30px;
+}
+
+.action-btn:focus {
+  outline: 0;
+}
+
+.music-info {
+  background-color: rgba(39, 39, 39);
+  color:white;
+  font-family: Noto Sans Mono, Helvetica, Arial;
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  top:30px;
+  right: 50px;
+  text-align: right;
+  /* padding: 10px 10px 10px 150px; */
+  opacity: 0;
+  transform: translateY(0%);
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+  z-index: 0;
+}
+
+.music-container.play .music-info {
+  opacity: 1;
+  transform: translateY(12%);
+}
+
+.music-info h4 {
+  margin: 0;
+}
+
+.progress-container {
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.progress {
+  background-color: #fe8daa;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+
+/*** template for smaller boxes ***/
+.right {
+  width: 700px;
+  height: 250px;
+  text-align: center;
+  overflow: scroll;
+  border-radius: 20px;
+  background-color: rgb(248,224,69);
+  border: 1px solid black;
+  color: black;
+  margin: 15px auto;
+}
+/* secondary titles */
+.h2 {
+  display: flex;
+  justify-content: center;
+  padding-left: 105px;
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 0;
+}
+/* saved content in ordered lists */
+ol {
+  text-decoration: none;
+  padding-top: 22px;
+}
+
+/* saved images */
+ol img {
+  width: 50%;
+}
+.reactions{
+  /* margin-left:400px; */
+  justify-items:right;
+}
+.fa-trash:hover {
+  color: rgb(108, 194, 255);
+}
+
+.fa-trash {
+  font-size: 15px;
+  text-align: right;
+}
+
+button:hover {
+  background-color: rgb(108, 194, 255);
+}
+/* + button for saving */
+.save,
+.love {
+  font-size: 10px;
+  margin-left: 7px;
+  height: 18px;
+  width: 256x;
+  border-radius: 25px;
+  border: 1px solid gray;
+  margin-bottom: 15px;
+  margin-top: 10px;
+
+}
+/*********** INSPO PHOtOS ***********/
+#black{
+  color: black
+}
+#gray{
+  color:gray;
+}
+#pdf{
+  font-size: 100px;
+  color: gray;
+}
+.submitSongs{
+  margin-left: 80px;
+}
+.trash{
+  margin-left: 160px;
+}
+#button{
+  width: 100px;
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 14px;
+  box-shadow: 4px 4px black;
+  border: 1px solid rgb(100, 18, 120);
+  background: white;
+  border-radius: 100px;
+  text-align: center;
+  margin-top: 15px;
+  margin: 15px auto;
+}
+.form1{
+  float:left;
+  margin-bottom: 150px;
+  margin-left: 200px;
+}
+.songForm{
+  width:400px;
+  /* margin:10px auto; */
+  height: 600px;
+  overflow: scroll;
+  padding: 1em;
+  background-color: white;
+  color:black;
+}
+#formAnswers{
+  margin-bottom: 150px;
+  float:right;
+  margin-right: 150px;
+}
+
+ul.submissions{
+  list-style: none;
+  /* display: flex;
+  flex-wrap: wrap; */
+  padding-top:2%;
+  /* margin:3px auto; */
+}
+
+li.song{
+  margin-top:2.5%;
+  width: 400px;
+  height: 600px;
+  overflow: scroll;
+  padding: 1em;
+  background-color: white;
+  color:black;
+  text-align: center;
+}
+.specialSongs{
+  margin-left: 30px;
+}
+#msgs {
+  width: 340px;
+  font-weight: 400;
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 15px;
+  color:  rgb(4, 3, 3);
+  border: 1px solid rgb(232, 232, 232);
+  background: rgb(205, 205, 205);
+  border-radius: 100px;
+  margin:15px auto;
+  margin-bottom: 0;
+
+}
+
+
+
+
+
+
+
+/* PROFILE PAGE / PROFILE PHOTO */
+ul.messages{
+  padding:0;
+}
+.profilePhoto{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  border:1px solid black;
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.photo:hover .profilePhoto {
+  opacity: 0.3;
+}
+
+.photo:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #04AA6D;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+/* #x:hover{
+  background-color: palegoldenrod;
+} */
+
+#x{
+  font-size: 24px;
+  display: flex;
+  justify-content: end;
+}
+.upload{
+  margin: 20px auto;
+  text-align: center;
+}
+.uploaded{
+  width:100%;
+}
+.uploaded ul{
+  list-style: none;
+}
+li.photo{
+  margin: 20px auto;
+  width: 40%;
+  padding: 5px;
+  background: none;
+  color:black;
+  text-align: center;
+}
+input {
+  width: 230px;
+  font-weight: 400;
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 15px;
+  color:  rgb(4, 3, 3);
+  border: 1px solid rgb(232, 232, 232);
+  background: rgb(205, 205, 205);
+  border-radius: 100px;
+  margin:15px auto;
+  margin-bottom: 0;
+
+}
+.upload button {
+  width: 100px;
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 14px;
+  margin-top: 0;
+  box-shadow: 4px 4px black;
+  border: 1px solid rgb(100, 18, 120);
+  background: white;
+  border-radius: 100px;
+}
+
+
+/* // code source: https://www.npmjs.com/package/gridfs-stream */
+/*********** AUDIO RECORDING ***********/
+
+/* hover code from  stackoverflow */
+
+[data-tooltip]:before {
+  /* needed - do not touch */
+  content: attr(data-tooltip);
+  position: absolute;
+  opacity: 0;
+  
+  /* customizable */
+  transition: all 0.15s ease;
+  padding: 10px;
+  width: 200px;
+  font-size: 11px;
+  color: rgb(236, 124, 67);
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px silver;    
+}
+
+[data-tooltip]:hover:before {
+  /* needed - do not touch */
+  opacity: 1;
+  
+  /* customizable */
+  background: rgb(67, 66, 66);
+  margin-top: -100px;
+  margin-left: 10px;    
+}
+
+
+ul.recordings{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top:2%;
+  margin:3px auto;
+}
+
+li.recording{
+  float:left;
+  height:200px;
+  width:350px;
+  margin-left:3.5%;
+  margin-top:2.5%;
+  text-decoration:none;
+  color:#000;
+  background:white;
+  display:block;
+  box-shadow: 5px 5px 7px rgba(39, 14, 41, 0.801);
+  font-size:20px;
+  padding:20px;
+  text-align: center;
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+}
+.recordBody{
+  text-align: center;
+}
+.recordingBtns{
+  font-size: 50px;
+}
+.record:hover {
+  color: rgb(108, 194, 255);
+}
+.stop:hover {
+  color: rgb(108, 194, 255);
+}
+
+.visualizer{
+  width:300px;
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Wedding Planner App</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/public/playlist.css">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+
+    <section class="navi">
+      <nav>
+        <a href="/profile" class="btn btn-default btn-sm">Profile</a>
+        <a href="/recording" class="btn btn-default btn-sm">Recordings</a>
+        <a href="/inspo" class="btn btn-default btn-sm">Songs</a>
+        <a href="/" class="btn btn-default btn-sm">Logout</a><br><br>
+      </nav>
+    </section>
+  </header>
+
+
+  <div class="container">
+
+
+
+    <div class="head">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6 hide" style="display:none">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %> <br>
+                        <strong>email</strong>: <%= user.local.email %> <br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div>
+        <div class="list">
+          <section class="info">
+            <h1 class="h1">Wedding Playlist</h1><br>
+            <p>Browse popular wedding music and start curating a playlist for the big day</p>
+          </section>
+
+          <section class="left">
+          <ul class="songList">
+          <% for(var i=0; i<songs.length; i++) {%>
+            <li class="message">
+                <audio src="<%= songs[i].src %>"> </audio><br>
+                <span class="albumName"><%= songs[i].songTitle %> </span>
+                <button class='save'>➕</button>
+
+                <span class="link"style='display:none'><%= songs[i].src %> </span>
+              </li>
+          <% } %>
+          </ul>
+        </div>
+        </section>
+        <h1 id="savedTitle" class="h2"></h1>
+        <div class="right">
+          <ol class="savedMusic queue">
+          <% for(var i=0; i<savedsongs.length; i++) {%>
+            <li class="movieList">
+              <div style="display:none"><%= savedsongs[i]._id %></div>
+              <span class="savedAlbum"><%= savedsongs[i].songTitle %></span>
+              <button class="deleteSaved"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
+              <hr>
+            </li>
+          <% } %>
+          </ol>
+        </div>
+
+  <script src="/public/playlist.js"></script>
+
+</body>
+
+</html>

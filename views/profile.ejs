@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Wedding Planner App</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/public/playlist.css">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <section class="navi">
+      <nav>
+        <a href="/playlists" class="btn btn-default btn-sm">Playlist</a>
+        <a href="/recording" class="btn btn-default btn-sm">Recordings</a>
+        <a href="/inspo" class="btn btn-default btn-sm">Songs</a>
+        <a href="/" class="btn btn-default btn-sm">Logout</a><br><br>
+      </nav>
+    </section>
+  </header>
+
+  <section class="header">
+
+  </section>
+
+  <section class="info">
+    <h1 class="h1">Hi again!</h1>
+    <span> <%= user.local.email%></span>
+  </section>
+
+  <div class="uploaded">
+    <ul class="messages">
+      <% for(var i=0; i<profilePhoto.length; i++) {%>
+        <li class="photo">
+          <img class="profilePhoto" src="<%= profilePhoto[i].src %>"></span>
+          <div class="middle">
+            <div class="text"><span id="x"><i id="<%=profilePhoto[i]._id%>" class="fa fa-pencil" aria-hidden="true"></i></div>
+          </div>
+        </li>
+        <% } %>
+    </ul>
+  </div>
+
+  <section class="upload">
+    <form method="POST" action="/photo" enctype="multipart/form-data">
+      <div>
+          <input type="file" name="default-photo" required/>
+      </div>
+      <div>
+          <input type="submit" value="Update Profile Photo" />
+      </div>
+    </form> 
+  </section>
+
+
+
+
+
+
+  <footer>
+      <div class="music-container" id="music-container">
+
+        <audio src="public/music/Candy Rain by Soul 4 Real.mp3" id="audio"></audio>
+
+        <div class="img-container">
+          <img src="images/ukulele.jpg" alt="music-cover" id="cover" />
+        </div>
+        <div class="navigation">
+          <button id="prev" class="action-btn">
+            <i class="fas fa-backward"></i>
+          </button>
+          <button id="play" class="action-btn action-btn-big">
+            <i class="fas fa-play"></i>
+          </button>
+          <button id="next" class="action-btn">
+            <i class="fas fa-forward"></i>
+          </button>
+        </div>
+
+        <div class="music-info">
+          <h4 id="title"></h4>
+          <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+          </div>
+        </div>
+      </div>
+  </footer>
+
+
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
