@@ -94,12 +94,12 @@ module.exports = function (app, passport, db) {
       { songTitle: 'Juicy by Notorious B.I.G', src: 'public/music/Juicy by Notorious B.I.G.mp3', cover: 'public/images/Juicy by Notorious B.I.G.jpg' },
       { songTitle: 'Like a Prayer by Madonna', src: 'public/music/Like a Prayer by Madonna.mp3', cover: 'public/images/Like a Prayer by Madonna.jpg' },
       { songTitle: 'One Two by Sister Nancy', src: 'public/music/One Two by Sister Nancy.mp3', cover: 'public/images/One Two By Sister Nancy.jpg' },
-      { songTitle: 'Piano Man by Billy Joel', src: 'public/music/Piano Man by Billy Joel.mp3', cover: 'public/images/Piano Man by Billy Joel.jpg' },
+      // { songTitle: 'Piano Man by Billy Joel', src: 'public/music/Piano Man by Billy Joel.mp3', cover: 'public/images/Piano Man by Billy Joel.jpg' },
       { songTitle: 'Reserved for You by Charles Bradley', src: 'public/music/Strictly Reserved for You by Charles Bradley.mp3', cover: 'public/images/Strictly Reserved for You by Charles Bradley.jpg' },
       { songTitle: 'Tennessee Whiskey by Chris Stapleton', src: 'public/music/Tennessee Whiskey by Chris Stapleton.mp3', cover: 'public/images/Tennessee Whiskey by Chris Stapleton.jpg' },
-      { songTitle: 'This Will Be (An Everlasting Love) by Natalie Cole', src: 'public/music/This Will Be (An Everlasting Love) by Natalie Cole.mp3', cover: 'public/images/This Will Be (An Everlasting Love) by Natalie Cole.jpg' },
-      { songTitle: 'Valerie by Amy Winehouse ft. Mark Ronson', src: 'public/music/Valerie by Amy Winehouse ft. Mark Ronson.mp3', cover: 'public/images/Valerie by Amy Winehouse ft. Mark Ronson.jpg' },
-      { songTitle: 'Walking On Sunshine by by Katrina And The Waves', src: 'public/music/Walking On Sunshine by Katrina And The Waves.mp3', cover: 'public/images/Walking On Sunshine by by Katrina And The Waves.jpg' },
+      { songTitle: 'This Will Be by Natalie Cole', src: 'public/music/This Will Be (An Everlasting Love) by Natalie Cole.mp3', cover: 'public/images/This Will Be (An Everlasting Love) by Natalie Cole.jpg' },
+      { songTitle: 'Valerie by Amy Winehouse', src: 'public/music/Valerie by Amy Winehouse ft. Mark Ronson.mp3', cover: 'public/images/Valerie by Amy Winehouse ft. Mark Ronson.jpg' },
+      // { songTitle: 'Walking On Sunshine by Katrina And The Waves', src: 'public/music/Walking On Sunshine by Katrina And The Waves.mp3', cover: 'public/images/Walking On Sunshine by by Katrina And The Waves.jpg' },
       { songTitle: 'You And I by Stevie Wonder', src: 'public/music/You And I by Stevie Wonder.mp3', cover: 'public/images/You And I by Stevie Wonder.jpg' },
 
 

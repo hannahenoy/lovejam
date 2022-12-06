@@ -7,9 +7,9 @@ body {
   /* background: -webkit-linear-gradient(rgb(252, 221, 221, 1),rgb(247, 247, 247, 1)); */
   /* background-attachment: fixed; */
   font-size: 14px;
-  line-height: 1.428;
+  line-height: 1.5;
   background:white;
-  color: black;
+  color: rgba(0, 0, 0, 0.794);
   font-family: 'Lato', sans-serif;
   margin: 0;
 }
@@ -43,6 +43,8 @@ header, .header {
   text-align: center;
   float: left;
   margin-top: 25px;
+  margin-left: 40px;
+
 
 }
 .nav2{
@@ -54,8 +56,8 @@ header, .header {
 /* base navigation */
 
 .navi{
-  margin-left: 90px;
-  font-size: 13px;
+  margin-left: 130px;
+  font-size: 15px;
   font-weight: bold;
 }
 
@@ -68,7 +70,7 @@ header, .header {
   font-weight: 450;
   line-height: 1.1;
   text-align: center;
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 #welcome{
   text-align: right;
@@ -77,11 +79,18 @@ header, .header {
   background-size:auto;
   background-repeat:repeat-y;
   background-position: fixed;
+  float: right;
+  margin-right: 200px;
+
 }
 #welcome2{
   margin: 15px auto;
-  width: 700px;
-
+  width: 470px;
+  height:400px;
+  background-color: rgb(182, 128, 214,0.5);
+  padding:25px;
+  border-radius: 20px;
+  margin-top: 25px;
 }
 /* countdown */
 .dateSection{
@@ -93,12 +102,11 @@ header, .header {
 }
 #myCountdown{
   font-family: Lato, Helvetica, sans-serif;
-  font-size: 35px;
+  font-size: 24px;
   font-weight:300;
   color: black;
   line-height: 1.1;
-  margin-top: 30px;
-  float: left;
+  margin-top: 10px;
 
 }
 
@@ -176,6 +184,7 @@ h1{
 nav{
   margin-bottom: 10px;
 }
+/* NAVIGATION BUTTONS */
 .btn-nav {
   color:black;
   width: 80px;
@@ -184,7 +193,6 @@ nav{
   margin-top: 4%;
   margin-left: 4px;
   margin-right: 4px;
-  border: 1px solid black;
 
   /* box-shadow: 4px 4px black;
   border: 1px solid rgb(100, 18, 120); */
@@ -217,29 +225,33 @@ nav{
 /*** template for boxes ***/
 .left {
   font-family: Lato, Helvetica, sans-serif;
-  font-size:13px;
-  font-weight: 400;
+  font-size:12px;
+  font-weight: 420;
   height: 380px;
-  width: 390px;
-  box-shadow: 20px 20px rgba(241,117,159);
+  width: 420px;
+  box-shadow: 15px 15px rgba(255, 194, 71, 0.875);
+  ;
   overflow: scroll;
-  padding: 20px;
-  border-radius: 30px;
-  background-color: black;
-  color:rgba(241,117,159);
+  padding: 4px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color:white;
   margin: 15px auto;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 li.tracks{
-  height:150px
+  height:110px
 }
 .trackInfo{
-  margin-left: 150px;
+  margin-left: 130px;
   position:relative;
   bottom:90px;
 }
 .albumCover{
-  width: 30%;
+  width: 25%;
+}
+.albumName{
+  width: 80px;
 }
 #player{
   margin-top:5px;
@@ -274,6 +286,7 @@ li.tracks{
   list-style: none;
   padding-top: 2%;
   margin: 2px auto;
+  padding-left: 15px;
 }
 
 /* new/saved images */
@@ -291,7 +304,7 @@ footer{
 
 
 .music-container {
-  background-color: rgb(61,102,163);
+  background-color: rgb(239, 191, 95);
   opacity: .9;
   box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
   display: flex;
@@ -352,9 +365,9 @@ footer{
 }
 
 .action-btn {
-  background-color: rgb(61,102,163);
+  background-color: rgb(239, 191, 95);
   border: 0;
-  color: #dfdbdf;
+  color: white;
   font-size: 20px;
   cursor: pointer;
   padding: 10px;
@@ -362,8 +375,12 @@ footer{
 }
 
 .action-btn.action-btn-big {
-  color: #cdc2d0;
+  background-color: rgb(239, 191, 95);
+  color: white;
   font-size: 30px;
+}
+.action-btn.action-btn-big:hover {
+  color: rgb(148, 24, 205);
 }
 
 .action-btn:focus {
@@ -371,16 +388,15 @@ footer{
 }
 
 .music-info {
-  background-color: rgb(61,102,163);
   color:white;
   font-family: Lato, Helvetica, Arial;
   border-radius: 15px 15px 0 0;
-  position: absolute;
-  top:20px;
+  position: fixed;
+  bottom: 10px;
   right: 50px;
   text-align: right;
   /* padding: 10px 10px 10px 150px; */
-  opacity: 0;
+  opacity: 1;
   transform: translateY(0%);
   transition: transform 0.3s ease-in, opacity 0.3s ease-in;
   z-index: 0;
@@ -405,7 +421,7 @@ footer{
 }
 
 .progress {
-  background-color: #fe8daa;
+  background-color: rgb(148, 24, 205);
   border-radius: 5px;
   height: 100%;
   width: 0%;
@@ -415,7 +431,7 @@ footer{
 
 /*** playlist ***/
 .purple{
-  color: #fe8daa;
+  color: rgba(241, 218, 117, 0.9);
 }
 
 audio::-webkit-media-controls-timeline,
@@ -454,33 +470,40 @@ audio{
 }
 .playlistBody{
   background-image: url('../public/images/casette.png');
-  background-size:250px;
   background-repeat:no-repeat;
-  background-position: 300px 150px;
+  background-size: 180px;
+  background-position: 26px 10px;
   background-position: fixed;
-  height: 1000px;
 }
 .right {
-  width: 450px;
+  width: 390px;
   height: 280px;
   text-align: left;
   overflow: scroll;
-  border-radius: 20px;
-  border: 1px solid black;
-  color: black;
+  border-radius: 10px;
+  color: white;
+  background: rgba(42, 51, 115, 0.7);
   margin: 15px auto;
-  margin-top: 30px;
+  margin-left: 55px;
+  margin-top: 80px;
   margin-bottom: 40px;
-  box-shadow: 6px 6px rgba(254,189,98);
+  box-shadow: 24px 29px rgba(0, 0, 0, 0.8);
+  float:left;
 }
 .savedMusic{
-  padding:25px;
+  padding:10px 35px;
 }
-.favorited, .deleteSaved, .save{
-  /* margin-left: 25px; */
+.favorited, .deleteSaved{
+  color:black;
   text-align: right;
   display:flex;
   justify-items: right;
+}
+.save{
+  color:black;
+  float:right;
+  font-weight: bolder;
+
 }
 .favorited, .save{
   /* margin-right: 55px; */
@@ -513,8 +536,9 @@ ol img {
   /* margin-left:400px; */
   justify-items:right;
 }
-.fa-trash:hover {
-  color: rgb(108, 194, 255);
+li.movieList:hover,
+li.tracks:hover {
+  color: rgb(182, 128, 214);
 }
 
 .fa-trash {
@@ -523,7 +547,7 @@ ol img {
 }
 
 button:hover {
-  background-color: rgb(108, 194, 255);
+  color: rgb(148, 24, 205);
 }
 
 /*********** SONG PLANNER (NEW INSPO PAGE) ***********/
@@ -670,7 +694,7 @@ ul.messages{
   backface-visibility: hidden;
   position: absolute;
   top: 300px;
-  left: 140px;
+  left: 200px;
 }
 .middle {
   transition: .5s ease;
@@ -708,16 +732,16 @@ ul.messages{
 }
 .uploaded{
   width:430px;
-  /* background-image: url('../public/images/draft.png');
+  background-image: url('../public/images/draft.png');
   background-size:300px;
   background-repeat:no-repeat;
-  background-position: fixed; */
+  background-position: center;
   text-align: center;
   /* display:flex; */
-  margin-top: 30px;
+  margin-top: 5px;
   margin-bottom: 50px;
   height:500px;
-  /* float:right; */
+  float:left;
   margin-left: 50px;
 }
 .uploader{

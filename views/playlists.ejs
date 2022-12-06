@@ -28,7 +28,7 @@
           <a href="/inspo" class="btn btn-nav btn-sm">Songs</a>
         </section>
         <section class="nav2">
-          <a href="/recording" class="btn btn-nav btn-sm">Recordings</a>
+          <a href="/recording" class="btn btn-nav btn-sm">Record</a>
           <a href="/" class="btn btn-nav btn-sm">Logout</a><br><br>
         </section>
       </nav>
@@ -57,11 +57,28 @@
             <% } %>
       </div>
       <section class="playlistBody">
+        <div class="right">
+          <ol class="savedMusic queue">
+            <% for(var i=0; i<savedsongs.length; i++) {%>
+              <li class="movieList <%= savedsongs[i].favorites ? 'purple' : '' %>">
+                <span class="savedAlbum">
+                  <%= savedsongs[i].songTitle %>
+                </span>
+                <section class="playlistBtns">
+                  <i class="fa fa-heart favorited" aria-hidden="true"></i>
+                  <i id="<%= savedsongs[i]._id%>" class="fa fa-trash deleteSaved" aria-hidden="true"></i>
+                </section>
+                
+              </li>
+            <% } %>
+          </ol>
+        </div>
+        
         <div class="list">
-          <section class="info">
+          <!-- <section class="info">
             <h1 class="h1">Wedding Playlist</h1><br>
             <span>Browse popular wedding music and start curating a playlist for the big day</span>
-          </section>
+          </section> -->
         
           
           <section class="left">
@@ -83,26 +100,11 @@
                 </li>
               <% } %>
             </ul>
+          </section>
         </div>
 
-        <h1 id="savedTitle" class="h2"></h1>
-        <div class="right">
-          <ol class="savedMusic queue">
-            <% for(var i=0; i<savedsongs.length; i++) {%>
-              <li class="movieList <%= savedsongs[i].favorites ? 'purple' : '' %>">
-                <span class="savedAlbum">
-                  <%= savedsongs[i].songTitle %>
-                </span>
-                <section class="playlistBtns">
-                  <i class="fa fa-heart favorited" aria-hidden="true"></i>
-                  <i id="<%= savedsongs[i]._id%>" class="fa fa-trash deleteSaved" aria-hidden="true"></i>
-                </section>
-                
-              </li>
-              <% } %>
-          </ol>
-        </div>
-    </section>
+
+      </section>
 
       <script src="/public/playlist.js"></script>
 
