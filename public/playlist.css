@@ -1,31 +1,193 @@
 body {
-  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  /* background-image: linear-gradient(
+    0deg,
+    rgba(247, 247, 247, 1) 23.8%,
+    rgba(252, 221, 221, 1) 92%
+  ); */
+  /* background: -webkit-linear-gradient(rgb(252, 221, 221, 1),rgb(247, 247, 247, 1)); */
+  /* background-attachment: fixed; */
   font-size: 14px;
   line-height: 1.428;
+  background:white;
+  color: black;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+/* links */
+
+a{
+ text-decoration: none; 
+ color: blueviolet
+}
+
+/*************** HEADER *******/
+
+/* lovejam logo */
+
+.logoImg{
+  width: 45%;
+}
+header, .header {
+  font-weight: bolder;
+  color: white;
+  background-image: url('../public/images/lovejamhands.png');
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position: fixed;
+  background-position: center center;
+  background-color: white;
+  height: 140px;
+
+}
+.nav1{
+  text-align: center;
+  float: left;
+  margin-top: 25px;
+
+}
+.nav2{
+  margin-top: 0px;
+  text-align: center;
+
+}
+
+/* base navigation */
+
+.navi{
+  margin-left: 90px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* "hi again" - homepage */
+.welcome{
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 45px;
+  color: black;
+  background-color: rgba(241,117,159);
+  font-weight: 450;
+  line-height: 1.1;
+  text-align: center;
+  margin-top: 40px;
+}
+#welcome{
+  text-align: right;
+  height: 400px;
+  /* background-image: url('../public/images/draft.png'); */
+  background-size:auto;
+  background-repeat:repeat-y;
+  background-position: fixed;
+}
+#welcome2{
+  margin: 15px auto;
+  width: 700px;
+
+}
+/* countdown */
+.dateSection{
+  margin: 15px auto;
+  text-align: center;
+}
+#demo{
+  font-family: Lato, Helvetica, Arial;
+}
+#myCountdown{
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight:300;
+  color: black;
+  line-height: 1.1;
+  margin-top: 30px;
+  float: left;
+
+}
+
+/* info headers for each page */
+
+.info{
+  text-align: center;
+  margin:1px auto;
 }
 h1{
   font-weight: 500;
   line-height: 1.1;
 }
-a{
- text-decoration: none; 
- color: blueviolet
+.h1 {
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 30px;
+  color: black;
+  background-color: rgba(241,117,159);
+  width: 350px;
+  margin:5px auto;
+  font-weight: 500;
+  line-height: 1.1;
 }
+
+/* base buttons */
+
 .btn-sm{
   padding: 5px 10px;
   line-height: 1.5;
 }
-.btn-default{
-  color: black;
-}
 .btn {
   display: inline-block;
+
+}
+.btn-default {
+  color:black;
+  width: 100px;
+  font-weight: 400;
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 20px;
+  margin-top: 5%;
+  margin-left: 4px;
+  margin-right: 4px;
+  /* box-shadow: 4px 4px black;
+  border: 1px solid rgb(100, 18, 120); */
 }
 
+#btn-right{
+  margin-left: 300px;
+}
+.playlist-btn{
+  color:black;
+  width: 190px;
+  font-weight: 400;
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 15px;
+  padding: 7px;
+  margin-top: 9%;
+  margin-left: 4px;
+  margin-right: 4px;
+  box-shadow: 6px 6px black;
+  border: 1px solid rgb(100, 18, 120);
+    /* "to left" / "to right" - affects initial color */
+    background: linear-gradient(to left, white 50%, rgb(61,102,163) 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+}
+.playlist-btn:hover{
+  background-position: left;
+  color:white;
+
+}
 
 /****** index.ejs - homepage ******/
 nav{
   margin-bottom: 10px;
+}
+.btn-nav {
+  color:black;
+  width: 80px;
+  font-weight: 400;
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  margin-top: 4%;
+  margin-left: 4px;
+  margin-right: 4px;
+  border: 1px solid black;
+
+  /* box-shadow: 4px 4px black;
+  border: 1px solid rgb(100, 18, 120); */
 }
 #box {
   width: 450px;
@@ -44,60 +206,45 @@ nav{
   font-family: Noto Sans Mono, Helvetica, sans-serif;
 }
 /* login and sign up buttons */
-.btn-default {
-  width: 110px;
-  font-weight: 400;
-  font-family: Noto Sans Mono, Helvetica, sans-serif;
-  font-size: 15px;
-  margin-top: 5%;
-  margin-left: 4px;
-  margin-right: 4px;
-  box-shadow: 4px 4px black;
-  border: 1px solid rgb(100, 18, 120);
-  background: lightcyan;
-  border-radius: 100px;
-}
+
+
 
 
 /****** profile.ejs  ******/
 
-/* email + logout */
-header, .header {
-  margin-bottom: 10px;
-  font-weight: bolder;
-  color: white;
-  text-align: center;
-}
+
 
 /*** template for boxes ***/
 .left {
-  height: 540px;
+  font-family: Lato, Helvetica, sans-serif;
+  font-size:13px;
+  font-weight: 400;
+  height: 380px;
+  width: 390px;
   box-shadow: 20px 20px rgba(241,117,159);
   overflow: scroll;
-  /* padding: 10px; */
-  border-radius: 20px;
+  padding: 20px;
+  border-radius: 30px;
   background-color: black;
   color:rgba(241,117,159);
   margin: 15px auto;
+  margin-top: 50px;
 }
-/* info headers for each page */
-.info{
-  text-align: center;
-  margin:1px auto;
+li.tracks{
+  height:150px
+}
+.trackInfo{
+  margin-left: 150px;
+  position:relative;
+  bottom:90px;
+}
+.albumCover{
+  width: 30%;
+}
+#player{
+  margin-top:5px;
 }
 
-
-.h1 {
-  font-family: Noto Sans Mono, Helvetica, sans-serif;
-  font-size: 30px;
-  color: black;
-  background-color: rgba(241,117,159);
-  width: 200px;
-  margin:5px auto;
-  font-weight: 500;
-  line-height: 1.1;
-
-}
 /* songs submission form */
 #msgs{
   width: 346px;
@@ -128,6 +275,7 @@ header, .header {
   padding-top: 2%;
   margin: 2px auto;
 }
+
 /* new/saved images */
 
 /* MUSIC PLAYER HOMEPAGE */
@@ -140,28 +288,14 @@ footer{
   right: 0px;
   margin-bottom: 0px;
 }
-body {
-  /* background-image: linear-gradient(
-    0deg,
-    rgba(247, 247, 247, 1) 23.8%,
-    rgba(252, 221, 221, 1) 92%
-  ); */
-  background: -webkit-linear-gradient(rgb(252, 221, 221, 1),rgb(247, 247, 247, 1));
-  background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Lato', sans-serif;
-  margin: 0;
-}
+
 
 .music-container {
-  background-color: rgb(39, 39, 39);
+  background-color: rgb(61,102,163);
   opacity: .9;
   box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
   display: flex;
-  padding: 20px 30px;
+  padding: 8px 18px;
   position: relative;
   z-index: 10;
 }
@@ -218,7 +352,7 @@ body {
 }
 
 .action-btn {
-  background-color: rgba(39, 39, 39);
+  background-color: rgb(61,102,163);
   border: 0;
   color: #dfdbdf;
   font-size: 20px;
@@ -237,12 +371,12 @@ body {
 }
 
 .music-info {
-  background-color: rgba(39, 39, 39);
+  background-color: rgb(61,102,163);
   color:white;
-  font-family: Noto Sans Mono, Helvetica, Arial;
+  font-family: Lato, Helvetica, Arial;
   border-radius: 15px 15px 0 0;
   position: absolute;
-  top:30px;
+  top:20px;
   right: 50px;
   text-align: right;
   /* padding: 10px 10px 10px 150px; */
@@ -279,17 +413,81 @@ body {
 }
 
 
-/*** template for smaller boxes ***/
+/*** playlist ***/
+.purple{
+  color: #fe8daa;
+}
+
+audio::-webkit-media-controls-timeline,
+video::-webkit-media-controls-timeline {
+    display: none;
+}
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    display: none;
+}
+audio::-webkit-media-controls-panel {
+  -webkit-justify-content: right;
+  height: 25px;
+}
+/* Removes the time stamp */
+audio::-webkit-media-controls-current-time-display {
+  display: none;
+}
+audio::-webkit-media-controls-mute-button {
+  display: none;
+}
+audio::-webkit-media-controls-volume-slider, video::-webkit-media-controls-volume-slider {
+  display: none;
+}
+audio::-webkit-media-controls-volume-slider-mute-button, video::-webkit-media-controls-volume-slider-mute-button {
+  -webkit-appearance: media-volume-slider-mute-button;
+  display: none;
+}
+audio::-webkit-media-controls-enclosure {
+    border-radius: 5px;
+    background-color: rgba(252, 104, 222, 0.3);
+}
+audio{
+  width: 100px;
+  height: 25px;
+}
+.playlistBody{
+  background-image: url('../public/images/casette.png');
+  background-size:250px;
+  background-repeat:no-repeat;
+  background-position: 300px 150px;
+  background-position: fixed;
+  height: 1000px;
+}
 .right {
-  width: 700px;
-  height: 250px;
-  text-align: center;
+  width: 450px;
+  height: 280px;
+  text-align: left;
   overflow: scroll;
   border-radius: 20px;
-  background-color: rgb(248,224,69);
   border: 1px solid black;
   color: black;
   margin: 15px auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  box-shadow: 6px 6px rgba(254,189,98);
+}
+.savedMusic{
+  padding:25px;
+}
+.favorited, .deleteSaved, .save{
+  /* margin-left: 25px; */
+  text-align: right;
+  display:flex;
+  justify-items: right;
+}
+.favorited, .save{
+  /* margin-right: 55px; */
+}
+.playlistBtns{
+  text-align: right;
+  float:right;
 }
 /* secondary titles */
 .h2 {
@@ -327,20 +525,8 @@ ol img {
 button:hover {
   background-color: rgb(108, 194, 255);
 }
-/* + button for saving */
-.save,
-.love {
-  font-size: 10px;
-  margin-left: 7px;
-  height: 18px;
-  width: 256x;
-  border-radius: 25px;
-  border: 1px solid gray;
-  margin-bottom: 15px;
-  margin-top: 10px;
 
-}
-/*********** INSPO PHOtOS ***********/
+/*********** SONG PLANNER (NEW INSPO PAGE) ***********/
 #black{
   color: black
 }
@@ -368,25 +554,55 @@ button:hover {
   text-align: center;
   margin-top: 15px;
   margin: 15px auto;
+  margin-right: 90px;
 }
 .form1{
   float:left;
-  margin-bottom: 150px;
-  margin-left: 200px;
+  clear:both;
+  margin-left: 90px;
+
 }
 .songForm{
-  width:400px;
   /* margin:10px auto; */
-  height: 600px;
+  height: 700px;
   overflow: scroll;
   padding: 1em;
   background-color: white;
   color:black;
+
 }
+.special{
+  text-align: center;
+}
+.specialSong{
+  text-align: center;
+}
+
 #formAnswers{
-  margin-bottom: 150px;
+  height: 700px;
+  margin-right: 90px;
   float:right;
-  margin-right: 150px;
+}
+#mark{
+  width: 50px;
+}
+.delete{
+  width: 100px;
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 14px;
+  box-shadow: 4px 4px black;
+  border: 1px solid rgb(100, 18, 120);
+  background: white;
+  border-radius: 100px;
+  text-align: center;
+  margin-top: 15px;
+}
+#deleteSongs{
+  text-align: center;
+}
+.version{
+  /* margin-left:150px; */
+  float:right;
 }
 
 ul.submissions{
@@ -397,19 +613,27 @@ ul.submissions{
   /* margin:3px auto; */
 }
 
+.songAnswer{
+  font-size: 18px;
+}
+.songCategory{
+  font-size: 13.5px;
+  background:rgba(241,117,159);
+  color:white
+}
 li.song{
+  list-style: none;
   margin-top:2.5%;
-  width: 400px;
-  height: 600px;
+  font-size: 17px;
+  width: 340px;
+  height: 700px;
   overflow: scroll;
   padding: 1em;
   background-color: white;
   color:black;
-  text-align: center;
+  text-align: left;
 }
-.specialSongs{
-  margin-left: 30px;
-}
+
 #msgs {
   width: 340px;
   font-weight: 400;
@@ -433,23 +657,27 @@ li.song{
 /* PROFILE PAGE / PROFILE PHOTO */
 ul.messages{
   padding:0;
+  margin-top: 20px;
 }
 .profilePhoto{
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  overflow: hidden;
+  width: 230px;
+  /* border-radius: 50%;
+  overflow: hidden; */
   border:1px solid black;
+  box-shadow: 15px 15px black;
   opacity: 1;
   transition: .5s ease;
   backface-visibility: hidden;
+  position: absolute;
+  top: 300px;
+  left: 140px;
 }
 .middle {
   transition: .5s ease;
   opacity: 0;
   position: absolute;
-  top: 53%;
-  left: 50%;
+  top: 420px;
+  left: 220px;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
@@ -464,7 +692,7 @@ ul.messages{
 }
 
 .text {
-  background-color: #04AA6D;
+  background-color: rgb(61,102,163);
   color: white;
   font-size: 16px;
   padding: 16px 32px;
@@ -478,48 +706,93 @@ ul.messages{
   display: flex;
   justify-content: end;
 }
-.upload{
-  margin: 20px auto;
-  text-align: center;
-}
 .uploaded{
-  width:100%;
+  width:430px;
+  /* background-image: url('../public/images/draft.png');
+  background-size:300px;
+  background-repeat:no-repeat;
+  background-position: fixed; */
+  text-align: center;
+  /* display:flex; */
+  margin-top: 30px;
+  margin-bottom: 50px;
+  height:500px;
+  /* float:right; */
+  margin-left: 50px;
+}
+.uploader{
+  text-align: center;
+  position:absolute;
+  top: 600px;
+  left: 190px;
+  margin-top: 15px;
 }
 .uploaded ul{
   list-style: none;
 }
 li.photo{
-  margin: 20px auto;
-  width: 40%;
   padding: 5px;
   background: none;
   color:black;
   text-align: center;
 }
+/* FILE UPLOAD BUTTON */
+.custom-file-upload{
+  font-size: 20px;
+}
+.custom-file-upload:hover{
+  color:rgb(61,102,163);
+}
+/* ALL INPUTS + UPLOAD PROFILE PHOTO BUTTON */
 input {
   width: 230px;
   font-weight: 400;
   font-family: Noto Sans Mono, Helvetica, sans-serif;
   font-size: 15px;
   color:  rgb(4, 3, 3);
-  border: 1px solid rgb(232, 232, 232);
-  background: rgb(205, 205, 205);
-  border-radius: 100px;
-  margin:15px auto;
-  margin-bottom: 0;
-
-}
-.upload button {
-  width: 100px;
-  font-family: Noto Sans Mono, Helvetica, sans-serif;
-  font-size: 14px;
-  margin-top: 0;
-  box-shadow: 4px 4px black;
-  border: 1px solid rgb(100, 18, 120);
+  border: 2px dashed rgb(253,183,153);
   background: white;
   border-radius: 100px;
+  margin:10px auto;
+  margin-bottom: 0;
+}
+#input__time{
+  width: 120px;
+  font-weight: 400;
+  font-family: Noto Sans Mono, Helvetica, sans-serif;
+  font-size: 14px;
+  color:  rgb(4, 3, 3);
+  border: 2px dashed rgb(253,183,153);
+  background: white;
+  border-radius: 100px;
+  margin:0 10px 0 10px;
+  margin-bottom: 0;
+}
+/* ONLY UPLOAD PROFILE PHOTO BUTTON W EFFECT*/
+#updateProfilePhoto{
+  width: 120px;
+  height:35px;
+
+  background: white; /* default color */
+
+  /* "to left" / "to right" - affects initial color */
+  background: linear-gradient(to left, white 50%, rgb(61,102,163) 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+  margin-bottom: 25px;
+
+}
+#updateProfilePhoto:hover{
+  background-position: left;
+
 }
 
+input[type="file"] {
+  display: none;
+}
+.space{
+  height: 150px
+}
 
 /* // code source: https://www.npmjs.com/package/gridfs-stream */
 /*********** AUDIO RECORDING ***********/

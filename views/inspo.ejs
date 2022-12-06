@@ -3,7 +3,7 @@
 
 <head>
   <title>Wedding Planner App</title>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="/public/playlist.css">
   <link rel="stylesheet" href="font-awesome.min.css">
@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -61,7 +63,7 @@
           </section>
 
           <div class="form1">
-            <h2>Special Moments</h2><br>
+            <h2 class="special">Special Moments</h2><br>
             <div class="songForm">
               <% if (user.local.email) { %>
               <form action="/songForm" method="POST">
@@ -95,13 +97,13 @@
                   <p id="songForm">Today's date:</p>
                   <input id="msgs" type="date" name="date"><br><br>
               </div>
-                  <span>Check if final version:</span><input type="radio" id="mark" name="progress">
-                  <button id="button" class="submitSongs" type="submit">Submit</button>
+              <button id="button" class="submitSongs" type="submit">Submit</button>    
+              <span>Check if final version:</span><input type="radio" id="mark" name="progress">
   
                 </form>
           </div>
           <div class="col-sm-6" id="formAnswers">
-            <h2 class="specialSongs">Special Songs</h2>
+            <h2 class="specialSong">Special Songs</h2>
             <div class="submissionsCard">
               <ul class="submissions">
                 <% for(var i=0; i<reception.length; i++) {%>
@@ -110,43 +112,45 @@
 
                   <b><span><%= reception[i].date %></span></b><br><br>
                     
-                  <span><b>Parents Entrance</b><br>
-                  <%= reception[i].parentsIntro %></span><br><br>
+                  <span class="songAnswer"><%= reception[i].parentsIntro %></span><br>
+                  <span class="songCategory">Parents Entrance</span><br><br>
+                  
+                  <span class="songAnswer"><%= reception[i].bridalParty %></span><br>
+                  <span class="songCategory">Bridal Party Entrance</span><br><br>
     
-                  <span><b>Bridal Party Entrance</b><br>
-                  <%= reception[i].bridalParty %></span><br><br>
+                  <span class="songAnswer"><%= reception[i].coupleIntro %></span><br>
+                  <span class="songCategory">Bride & Groom Entrance</span><br><br>
     
-                  <span><b>Bride & Groom Entrance</b><br>
-                  <%= reception[i].coupleIntro %></span><br><br>
+                  <span class="songAnswer"><%= reception[i].firstDance %></span><br>
+                  <span class="songCategory">First Dance</span><br><br>
     
-                  <span><b>First Dance</b><br>
-                  <%= reception[i].firstDance %></span><br><br>
+                  <span class="songAnswer"><%= reception[i].brideDance %></span><br>
+                  <span class="songCategory">Bride & Father Dance</span><br><br>
     
-                  <span><b>Bride & Father Dance</b><br>
-                  <%= reception[i].brideDance %></span><br><br>
+                  <span class="songAnswer"><%= reception[i].groomDance %></span><br>
+                  <span class="songCategory">Groom & Mother Dance</span><br><br>
     
-                  <span><b>Groom & Mother Dance</b><br>
-                  <%= reception[i].groomDance %></span><br><br>
+                  <span class="songAnswer"><%= reception[i].cakeCutting %></span><br>
+                  <span class="songCategory">Cake Cutting Song</span><br><br>
     
-                  <span><b>Cake Cutting Song</b><br>
-                  <%= reception[i].cakeCutting %></span><br><br>
+                  <span class="songAnswer"><%= reception[i].lastDance %></span><br>
+                  <span class="songCategory">Last Dance</span><br><br>
     
-                  <span><b>Last Dance</b><br>
-                  <%= reception[i].lastDance %></span><br><br>
-    
-                  <span><b>Additional songs</b><br>
-                  <%= reception[i].msg %></span><br><br>
+                  <span class="songAnswer"><%= reception[i].songs %></span><br>
+                  <span class="songCategory">Additional songs</span><br><br>
 
-                  <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+                  <i id="<%= reception[i]._id%>" class="fa fa-trash" aria-hidden="true"></i>
 
                 </li>
-  
-                <% if (reception[i].progress === 'final') { %>
-                  <span>Final version: <i class="fa fa-check-circle-o" aria-hidden="true"></i></span>
-                <% } else { %>
-                  <span>Final version: <i class="fa fa-circle-o" aria-hidden="true"></i></span>
-  
-                  <% } %>
+                  <section class="version">
+                    <% if (reception[i].progress === 'final') { %>
+                      <span>Final version: <i class="fa fa-check-circle-o" aria-hidden="true"></i></span>
+                    <% } else { %>
+                      <span>Final version: <i class="fa fa-circle-o" aria-hidden="true"></i></span>
+                  </section>
+
+
+                    <% } %>
   
 
               </ul>

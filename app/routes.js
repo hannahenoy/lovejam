@@ -34,9 +34,6 @@ module.exports = function (app, passport, db) {
 
   // source: https://www.npmjs.com/package/multer 
 
-  // const express = require('express');
-  // app.use(express.static(__dirname + '/public'));
-  // app.use('/public/data/uploads', express.static('uploads'));
   let storage = multer.diskStorage({
     destination: (req, file, cb) => {
       cb(null, 'public/audio/uploads')
@@ -85,26 +82,25 @@ module.exports = function (app, passport, db) {
 
   app.get('/playlists', isLoggedIn, function (req, res) {
     let songs = [
-      { songTitle: 'A Thousand Years by Christina Perri', src: 'public/music/A Thousand Years by Christina Perri.mp3' },
-      { songTitle: 'Beautiful Girls by Sean King', src: 'public/music/Beautiful Girls by Sean King.mp3' },
-      { songTitle: 'Build Me Up Buttercup by The Foundations', src: 'public/music/Build Me Up Buttercup by The Foundations.mp3' },
-      { songTitle: 'Candy Rain by Soul 4 Real', src: 'public/music/Candy Rain by Soul 4 Real.mp3' },
-      { songTitle: 'Come and Get Your Love by Redbone.', src: 'public/music/Come and Get Your Love by Redbone.mp3' },
-      { songTitle: 'Coming Home by Leon Bridges', src: 'public/music/Coming Home by Leon Bridges.mp3' },
-      { songTitle: 'Electric Slide by by Marcia Griffiths', src: 'public/music/Electric Slide by by Marcia Griffiths.mp3' },
-      { songTitle: 'Good Kisser by Lake Street Drive', src: 'public/music/Good Kisser by Lake Street Drive.mp3' },
-      { songTitle: 'Here And Now by Luther Vandross', src: 'public/music/Here And Now by Luther Vandross.mp3' },
-      { songTitle: 'Hold On, We\'re Going Home by Drake', src: 'public/music/Hold On, We\'re Going Home by Drake.mp3' },
-      { songTitle: 'Juicy by Lizzo', src: 'public/music/Juicy by Lizzo.mp3' },
-      { songTitle: 'Like a Prayer by Madonna', src: 'public/music/Like a Prayer by Madonna.mp3' },
-      { songTitle: 'One Two by Sister Nancy', src: 'public/music/One Two by Sister Nancy.mp3' },
-      { songTitle: 'Piano Man by Billy Joel', src: 'public/music/Piano Man by Billy Joel.mp3' },
-      { songTitle: 'Reserved for You by Charles Bradley', src: 'public/music/Strictly Reserved for You by Charles Bradley.mp3' },
-      { songTitle: 'Tennessee Whiskey by Chris Stapleton', src: 'public/music/Tennessee Whiskey by Chris Stapleton.mp3' },
-      { songTitle: 'This Will Be (An Everlasting Love) by Natalie Cole', src: 'public/music/This Will Be (An Everlasting Love) by Natalie Cole.mp3' },
-      { songTitle: 'Valerie by Amy Winehouse ft. Mark Ronson', src: 'public/music/Valerie by Amy Winehouse ft. Mark Ronson.mp3' },
-      { songTitle: 'Walking On Sunshine by by Katrina And The Waves', src: 'public/music/Walking On Sunshine by by Katrina And The Waves.mp3' },
-      { songTitle: 'You And I by Stevie Wonder', src: 'public/music/You And I by Stevie Wonder.mp3' },
+      { songTitle: 'Beautiful Girls by Sean Kingston', src: 'public/music/Beautiful Girls by Sean King.mp3', cover: 'public/images/Beautiful Girls by Sean Kingston.jpg' },
+      { songTitle: 'Build Me Up Buttercup by The Foundations', src: 'public/music/Build Me Up Buttercup by The Foundations.mp3', cover: 'public/images/Build Me Up Buttercup by The Foundations.jpg' },
+      { songTitle: 'Candy Rain by Soul 4 Real', src: 'public/music/Candy Rain by Soul 4 Real.mp3', cover: 'public/images/Candy Rain by Soul 4 Real.jpg' },
+      { songTitle: 'Come and Get Your Love by Redbone', src: 'public/music/Come and Get Your Love by Redbone.mp3', cover: 'public/images/Come and Get Your Love by Redbone.jpg' },
+      { songTitle: 'Coming Home by Leon Bridges', src: 'public/music/Coming Home by Leon Bridges.mp3', cover: 'public/images/Coming Home by Leon Bridges.jpg' },
+      { songTitle: 'Electric Slide by by Marcia Griffiths', src: 'public/music/Electric Slide by by Marcia Griffiths.mp3', cover: 'public/images/Electric Slide by by Marcia Griffiths.jpg' },
+      { songTitle: 'Good Kisser by Lake Street Drive', src: 'public/music/Good Kisser by Lake Street Drive.mp3', cover: 'public/images/Good Kisser by Lake Street Drive.jpg' },
+      { songTitle: 'Here And Now by Luther Vandross', src: 'public/music/Here And Now by Luther Vandross.mp3', cover: 'public/images/Here And Now by Luther Vandross.jpg' },
+      { songTitle: 'Hold On, We\'re Going Home by Drake', src: 'public/music/Hold On, We\'re Going Home by Drake.mp3', cover: 'public/images/Hold On, We\'re Going Home by Drake.jpg' },
+      { songTitle: 'Juicy by Notorious B.I.G', src: 'public/music/Juicy by Notorious B.I.G.mp3', cover: 'public/images/Juicy by Notorious B.I.G.jpg' },
+      { songTitle: 'Like a Prayer by Madonna', src: 'public/music/Like a Prayer by Madonna.mp3', cover: 'public/images/Like a Prayer by Madonna.jpg' },
+      { songTitle: 'One Two by Sister Nancy', src: 'public/music/One Two by Sister Nancy.mp3', cover: 'public/images/One Two By Sister Nancy.jpg' },
+      { songTitle: 'Piano Man by Billy Joel', src: 'public/music/Piano Man by Billy Joel.mp3', cover: 'public/images/Piano Man by Billy Joel.jpg' },
+      { songTitle: 'Reserved for You by Charles Bradley', src: 'public/music/Strictly Reserved for You by Charles Bradley.mp3', cover: 'public/images/Strictly Reserved for You by Charles Bradley.jpg' },
+      { songTitle: 'Tennessee Whiskey by Chris Stapleton', src: 'public/music/Tennessee Whiskey by Chris Stapleton.mp3', cover: 'public/images/Tennessee Whiskey by Chris Stapleton.jpg' },
+      { songTitle: 'This Will Be (An Everlasting Love) by Natalie Cole', src: 'public/music/This Will Be (An Everlasting Love) by Natalie Cole.mp3', cover: 'public/images/This Will Be (An Everlasting Love) by Natalie Cole.jpg' },
+      { songTitle: 'Valerie by Amy Winehouse ft. Mark Ronson', src: 'public/music/Valerie by Amy Winehouse ft. Mark Ronson.mp3', cover: 'public/images/Valerie by Amy Winehouse ft. Mark Ronson.jpg' },
+      { songTitle: 'Walking On Sunshine by by Katrina And The Waves', src: 'public/music/Walking On Sunshine by Katrina And The Waves.mp3', cover: 'public/images/Walking On Sunshine by by Katrina And The Waves.jpg' },
+      { songTitle: 'You And I by Stevie Wonder', src: 'public/music/You And I by Stevie Wonder.mp3', cover: 'public/images/You And I by Stevie Wonder.jpg' },
 
 
     ];
@@ -132,56 +128,39 @@ module.exports = function (app, passport, db) {
           res.send({})
         })
   })
-
-
-  app.put('/saveMovie', (req, res) => {
+  app.put('/favorites', (req, res) => {
     db.collection('savedList')
-      .findOneAndUpdate({
-        songTitle: req.body.songTitle,
-      }, {
-        $set: {
-          thumbUp: req.body.thumbUp + 1
-        }
-      }, {
-        sort: { _id: -1 },
-        upsert: true
-      }, (err, result) => {
-        if (err) return res.send(err)
-        res.send(result)
-      })
-  })
-
-  app.delete('/deleteSave', (req, res) => {
-    console.log(req.body, 'delete route hit')
-    db.collection('savedList').findOneAndDelete({ _id: ObjectId(req.body.movieId) },
-      function (err, result) {
-        if (err) return res.send(500, err)
-        res.send(result)
-      })
-
-  })
-  app.post('/messages', (req, res) => {
-    db.collection('messages').save({ name: req.body.name, msg: req.body.msg, smile: 0 }, (err, result) => {
-      if (err) return console.log(err)
-      console.log('saved to database')
-      res.redirect('/playlists')
+    .findOneAndUpdate({
+      songTitle: req.body.songTitle,
+    }, {
+      $set: {
+        favorites: true
+      }
+    }, {
+      sort: {_id: -1},
+      upsert: true
+    }, (err, result) => {
+      if (err) return res.send(err)
+      res.send(result)
     })
   })
-
-  app.put('/messages', (req, res) => {
-    db.collection('messages')
-      .findOneAndUpdate({ name: req.body.name, msg: req.body.msg }, {
-        $set: {
-          love: req.body.love + 1,
-        }
-      }, {
-        sort: { _id: -1 },
-        upsert: true
-      }, (err, result) => {
-        if (err) return res.send(err)
-        res.send(result)
-      })
+  app.delete('/deleteSave', (req, res) => {
+    db.collection('savedList').findOneAndDelete({ _id: ObjectId(req.body.id) }, (err, result) => {
+      if (err) return res.send(500, err)
+      console.log(err)
+      res.send('Message deleted!')
+    })
   })
+  // app.delete('/deleteSave', (req, res) => {
+  //   console.log(req.body, 'delete route hit')
+  //   db.collection('savedList').findOneAndDelete({ _id: ObjectId(req.body.movieId) },
+  //     function (err, result) {
+  //       if (err) return res.send(500, err)
+  //       res.send(result)
+  //     })
+
+  // })
+
 
 
 
@@ -209,23 +188,21 @@ module.exports = function (app, passport, db) {
           audio: 'audio/uploads/' + req.file.filename,
           postedBy: req.user.local.email
         },
-
         (err, result) => {
-          console.log('hellloo ', result.ops[0])
           if (err) return console.log(err)
           console.log('saved to database')
           res.redirect('/recording')
         })
   })
-
-  app.delete('/deleteLibrary', (req, res) => {
-    db.collection('recordings').findOneAndDelete({ name: req.body.name, spelling: req.body.spelling, role: req.body.role }, (err, result) => {
+  app.delete('/deleteRecording', (req, res) => {
+    db.collection('recordings').findOneAndDelete({ _id: ObjectId(req.body.id) }, (err, result) => {
       if (err) return res.send(500, err)
-      res.send('recording deleted!')
+      console.log(err)
+      res.send('Message deleted!')
     })
   })
 
-  // INSPO SECTION =========================
+  // SONG SUBMISSION FORM (old inspo) SECTION =========================
   app.get('/inspo', isLoggedIn, function (req, res) {
     db.collection('songSubmissions').find().toArray((err, result) => {
       if (err) return console.log(err)
@@ -286,25 +263,14 @@ module.exports = function (app, passport, db) {
         res.redirect('/')
       })
   })
-  app.delete('/deleteSubmission', (req, res) => {
-    db.collection('songSubmissions').findOneAndDelete(
-      {         
-        date: req.body.date,
-        parentsIntro: req.body.parentsIntro,
-        bridalParty: req.body.bridalParty,
-        coupleIntro: req.body.coupleIntro,
-        firstDance: req.body.firstDance,
-        brideDance: req.body.brideDance,
-        groomDance: req.body.groomDance,
-        cakeCutting: req.body.cakeCutting,
-        lastDance: req.body.lastDance,
-        msg: req.body.msg,
-      },
-    (err, result) => {
+  app.delete('/deleteSongs', (req, res) => {
+    db.collection('songSubmissions').findOneAndDelete({ _id: ObjectId(req.body.id) }, (err, result) => {
       if (err) return res.send(500, err)
-      res.send('submission deleted!')
+      console.log(err)
+      res.send('Message deleted!')
     })
   })
+
 
   // LOGOUT ==============================
   app.get('/logout', function (req, res) {
