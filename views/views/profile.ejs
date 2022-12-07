@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Wedding Planner App</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/public/playlist.css">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- <span> <%= user.local.email%></span> -->
+  <!-- HEADER MAIN NAV -->
+  <header>
+    <section class="navi">
+      <nav>
+        <section class="nav1">
+          <a href="/inspo" class="btn btn-nav btn-sm"></a>
+          <a href="/recording" class="btn btn-nav btn-sm"></a>
+        </section>
+        <section class="nav2">
+          <a href="/" id="btn-right" class="btn btn-nav btn-sm">Logout</a><br><br>
+        </section>
+      </nav>
+    </section>
+  </header>
+
+  <!-- COUNTDOWN FORM -->
+  <div class="dateSection">
+
+    <form class="form">
+      <span>Our wedding is on:</span>
+      <input autocomplete="off" autofocus class="input__time" id="input__time" type="date">
+      <button class="submit" type="submit"><i class="fa fa-check btn" aria-hidden="true"></i></button>
+    </form>
+  </div>
+  <section class="mainProfile">
+    <!-- WELCOME COUNTDOWN -->
+    <section id="welcome">
+      <section id="welcome2">
+      <!-- <h1 class="welcome">Hi again!</h1> -->
+
+      <div class="until" id="myCountdown">
+        <div class="until__component">
+          <span class="until__numeric until__numeric--days">00</span><span> days</span> 
+          <span class="until__numeric until__numeric--hours">00</span><span> hours</span>
+          <span class="until__numeric until__numeric--minutes">00</span><span> minutes</span>
+          <span class="until__numeric until__numeric--seconds">00</span><span> seconds</span><br>
+          
+          <span>until your big day.</span>
+        </div>
+        <span class="until__event" style="display:none">Until DD MM YYYY</span>
+      </div>
+      <a href="/playlists" class="btn btn-sm playlist-btn">Go to your playlist ⇢</a><br>
+      <a href="/inspo" class="btn btn-sm playlist-btn">Create a song planner ⇢</a><br>
+      <a href="/recording" class="btn btn-sm playlist-btn">Record names ⇢</a>
+
+    </section>
+
+
+    <!-- UPLOADED PROFILE PHOTO -->
+    <div class="uploaded">
+      <ul class="messages">
+        <% for(var i=0; i<profilePhoto.length; i++) {%>
+          <li class="photo">
+            <img class="profilePhoto" src="<%= profilePhoto[i].src %>"></span>
+            <div class="middle">
+              <div class="text"><span id="x"><i id="<%=profilePhoto[i]._id%>" class="fa fa-pencil" aria-hidden="true"></i>
+              </div>
+            </div>
+          </li>
+          <% } %>
+      </ul>
+
+        <!-- FILE UPLOADER -->
+    <section class="uploader">
+      <form method="POST" action="/photo" enctype="multipart/form-data">
+        <label for="file-upload" class="custom-file-upload">
+          <i class="fa fa-camera" aria-hidden="true"></i><br>
+        </label>
+        <input id="file-upload" type="file" name="default-photo" required />
+        <input id="updateProfilePhoto" type="submit" value="UPLOAD" />
+      </form>
+    </section>
+    </div>
+  </section>
+
+
+  <!-- PLACEHOLDER -->
+  <section class="space">  
+  </section>
+
+  <!-- MUSIC PLAYER  -->
+  <footer>
+    <div class="music-container" id="music-container">
+
+      <audio src="public/music/Candy Rain by Soul 4 Real.mp3" id="audio"></audio>
+
+      <div class="img-container">
+        <img src="public/images/Candy Rain by Soul 4 Real.jpg" alt="music-cover" id="cover" />
+      </div>
+      <div class="navigation">
+        <button id="prev" class="action-btn">
+          <i class="fas fa-backward"></i>
+        </button>
+        <button id="play" class="action-btn action-btn-big">
+          <i class="fas fa-play"></i>
+        </button>
+        <button id="next" class="action-btn">
+          <i class="fas fa-forward"></i>
+        </button>
+      </div>
+    </section>
+
+      <div class="music-info">
+        <h4 id="title"></h4>
+        <div class="progress-container" id="progress-container">
+          <div class="progress" id="progress"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.1/dayjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.1/plugin/duration.min.js"></script>
+  <script src="/public/main.js"></script>
+
+</body>
+
+</html>

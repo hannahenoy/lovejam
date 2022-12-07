@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+        <title>Wedding Planner App</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/public/playlist.css">
+        <link rel="stylesheet" href="font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
+      </head>
+      
+      <body>
+        <div class="recordBody">
+          <header>
+            <section class="navi">
+              <nav>
+                <section class="nav1">
+                  <a href="/profile" class="btn btn-nav btn-sm">Home</a>
+                  <a href="/inspo" class="btn btn-nav btn-sm">Songs</a>
+                </section>
+                <section class="nav2">
+                  <a href="/playlists" class="btn btn-nav btn-sm">Playlist</a>
+                  <a href="/" class="btn btn-nav btn-sm">Logout</a><br><br>
+                </section>
+              </nav>
+            </section>
+          </header>
+
+          <section class="info">
+            <h1 class="h1">Record Audio</h1>
+            <p>Any not-so-easy names to pronounce in your bridal parties? Record them here!</p><br>
+          </section>
+
+          <section class="mainRecord">
+            <!-- AUDIO RECORDER --------------- -->
+
+            <div class="audioRecorder">
+              <% if (user.local.email) { %>
+                <section class="main-controls">
+                  <div class="recordingBtns">
+                    <i class="fa fa-microphone record" aria-hidden="true"></i>
+                    <i class="fa fa-stop-circle stop" aria-hidden="true"></i>
+                  </div>
+                  <canvas class="visualizer" height="40px"></canvas>
+                </section>
+                <section class="sound-clips">
+                </section>
+              </div>
+            <% } %>
+
+
+              <!-- SUBMIT NAME/AUDIO RECORDING --------------- -->
+
+              <form action="/postLibrary" enctype="multipart/form-data" method="POST">
+                <input type="text" placeholder="Name" name="name"><br>
+                <input type="text" placeholder="Phonetic Spelling" name="spelling"><br>
+                <input type="text" placeholder="Wedding Role" name="role"><br><br>
+
+                <label for="file-upload" class="custom-file-upload">
+                  <i class="fa fa-file-audio-o recordingBtns" aria-hidden="true"></i>
+                  <br>
+                </label>
+                <input id="file-upload" type="file" name="file-to-upload" required /><br>
+
+                <input id="updateProfilePhoto" class="delete" type="submit" value="UPLOAD" /><br><br><br><br>
+              </form>
+          </section>
+
+          <!-- AUDIO LIBRARY --------------- -->
+          <!-- <h1>Library</h1> -->
+              <div class="audioLibrary">
+                <ul class="recordings">
+                  <% for(let i=0; i<recordings.length; i++) { %>
+                    <li class="recording">
+                      <b><span><%= recordings[i].name %></span></b>
+                      <i><span>(<%= recordings[i].spelling %>)</span></i><br>
+                      <span><%= recordings[i].role %></span><br>
+                      <audio src="<%= recordings[i].audio %>" controls></audio><br><br>
+                      <i id="<%= recordings[i]._id%>" class="fa fa-trash" aria-hidden="true"></i>
+
+                    </li>
+                    <% } %>
+                </ul>
+                
+              </div>
+        </div>
+          <script src="/public/record.js"></script>
+      </body>
+
+</html>
