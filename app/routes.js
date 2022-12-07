@@ -11,7 +11,7 @@ module.exports = function (app, passport, db) {
   });
 
   app.get('/', (req, res) => {
-    db.collection('msg').find().toArray((err, result) => {
+    db.collection('msg').find({ postedBy: req.user.local.email }).toArray((err, result) => {
       if (err) return console.log(err)
       res.render('index.ejs', { fact: result })
 
@@ -21,7 +21,7 @@ module.exports = function (app, passport, db) {
   // PROFILE SECTION =========================
 
   app.get('/profile', isLoggedIn, function (req, res) {
-    db.collection('profilePhoto').find().toArray((err, result) => {
+    db.collection('profilePhoto').find({ postedBy: req.user.local.email }).toArray((err, result) => {
       if (err) return console.log(err)
       res.render('profile.ejs',
         {
@@ -52,7 +52,8 @@ module.exports = function (app, passport, db) {
     let img =
     {
       src: req.file.path,
-      name: req.file.filename
+      name: req.file.filename,
+      postedBy: req.user.local.email
     }
     console.log(img)
     db.collection('profilePhoto').insertOne(img)
@@ -104,7 +105,7 @@ module.exports = function (app, passport, db) {
 
 
     ];
-    db.collection('savedList').find().toArray((err1, savedsongs) => {
+    db.collection('savedList').find({ postedBy: req.user.local.email }).toArray((err1, savedsongs) => {
       db.collection('users').find().toArray((err2, result) => {
         if (err2) return console.log(err2)
         console.log(savedsongs, 'saved list')
@@ -121,6 +122,7 @@ module.exports = function (app, passport, db) {
     db.collection('savedList')
       .insertOne({
         songTitle: req.body.songTitle,
+        postedBy: req.user.local.email
       },
         (err, result) => {
           if (err) return console.log(err)
@@ -204,7 +206,7 @@ module.exports = function (app, passport, db) {
 
   // SONG SUBMISSION FORM (old inspo) SECTION =========================
   app.get('/inspo', isLoggedIn, function (req, res) {
-    db.collection('songSubmissions').find().toArray((err, result) => {
+    db.collection('songSubmissions').find({ postedBy: req.user.local.email }).toArray((err, result) => {
       if (err) return console.log(err)
       res.render('inspo.ejs', {
         user: req.user,
@@ -233,7 +235,9 @@ module.exports = function (app, passport, db) {
         cakeCutting: req.body.cakeCutting,
         lastDance: req.body.lastDance,
         msg: req.body.msg,
-        progress: progress
+        progress: progress,
+        postedBy: req.user.local.email
+        
       },
       (err, result) => {
         if (err) return console.log(err)
@@ -255,7 +259,8 @@ module.exports = function (app, passport, db) {
         cakeCutting: req.body.cakeCutting,
         lastDance: req.body.lastDance,
         msg: req.body.msg,
-        progress: progress
+        progress: progress,
+        postedBy: req.user.local.email
       },
       (err, result) => {
         if (err) return console.log(err)

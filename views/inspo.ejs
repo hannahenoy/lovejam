@@ -1,174 +1,180 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+        <title>Wedding Planner App</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/public/playlist.css">
+        <link rel="stylesheet" href="font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
+      </head>
+      
+  <body>
+        <!-- <div class="recordBody"> -->
+          <header>
+            <section class="navi">
+              <nav>
+                <section class="nav1">
+                  <a href="/profile" class="btn btn-nav btn-sm">Home</a>
+                  <a href="/playlists" class="btn btn-nav btn-sm">Playlist</a>
+                </section>
+                <section class="nav2">
+                  <a href="/recording" class="btn btn-nav btn-sm">Record</a>
+                  <a href="/" class="btn btn-nav btn-sm">Logout</a><br><br>
+                </section>
+              </nav>
+            </section>
+          </header>
 
-<head>
-  <title>Wedding Planner App</title>
-  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/public/playlist.css">
-  <link rel="stylesheet" href="font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <header>
-
-    <section class="navi">
-      <nav>
-        <a href="/profile" class="btn btn-default btn-sm">Profile</a>
-        <a href="/playlists" class="btn btn-default btn-sm">Playlist</a>
-        <a href="/recording" class="btn btn-default btn-sm">Recordings</a>
-        <a href="/" class="btn btn-default btn-sm">Logout</a><br><br>
-      </nav>
-    </section>
-  </header>
-
-
-  <div class="container">
-
-    <div class="head">
-        <!-- LOCAL INFORMATION -->
-        <div class="col-sm-6 hide" style="display:none">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
-
-                <% if (user.local.email) { %>
-                    <p>
-                        <strong>id</strong>: <%= user._id %> <br>
-                        <strong>email</strong>: <%= user.local.email %> <br>
-                        <strong>password</strong>: <%= user.local.password %>
-                    </p>
-
-                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
-                <% } else { %>
-                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
-                <% } %>
-
-            </div>
-        </div>
-
-          <section class="info">
-            <h1 class="h1">Song Planner</h1><br>
+          <section class="info vinyl">
+            <h1 class="h1">Song Planner</h1>
             <p>
               We thought of every detail in our reception planner  <br>
               Just pair every moment with your special song
-            </p>
+            </p>          
           </section>
 
-          <div class="form1">
-            <h2 class="special">Special Moments</h2><br>
-            <div class="songForm">
-              <% if (user.local.email) { %>
-              <form action="/songForm" method="POST">
-                <p id="songForm">Parents Entrance:</p>
-                <input id="msgs" type="text" placeholder="e.g. L-O-V-E, Nat King Cole" name="parentsIntro"><br><br>
-    
-                <p id="songForm">Bridal Party Entrance:</p>
-                <input id="msgs" type="text" placeholder="e.g. You Make My Dreams, Hall & Oates " name="bridalParty"><br><br>
-    
-                <p id="songForm">Bride & Groom Entrance:</p>
-                <input id="msgs" type="text" placeholder="e.g. Knocks Me Off My Feet, Stevie Wonder" name="coupleIntro"><br><br>
-    
-                <p id="songForm">First Dance:</p>
-                <input id="msgs" type="text" placeholder="e.g. Your Song, Elton John" name="firstDance"><br><br>
-    
-                <p id="songForm">Bride & Father Dance:</p>
-                <input id="msgs" type="text" placeholder="e.g. At Last, Etta James" name="brideDance"><br><br>
-    
-                <p id="songForm">Groom & Mother Dance:</p>
-                <input id="msgs" type="text" placeholder="e.g. Remember When, Alan Jackson" name="groomDance"><br><br>
-    
-                <p id="songForm">Cake Cutting Song:</p>
-                <input id="msgs" type="text" placeholder="e.g. I Want to Be Evil, Eartha Kitt" name="cakeCutting"><br><br>
-    
-                <p id="songForm">Last Dance:</p>
-                <input id="msgs" type="text" placeholder="e.g. Isn't She Lovely, Stevie Wonder" name="lastDance"><br><br>
-    
-                <p id="songForm">Additional songs:</p>
-                  <input id="msgs" type="text" placeholder="e.g. L-O-V-E (Groom & Daughter Dance)" name="msg"><br><br>
-  
-                  <p id="songForm">Today's date:</p>
-                  <input id="msgs" type="date" name="date"><br><br>
+
+    <div class="container">
+
+      <div class="head">
+          <!-- LOCAL INFORMATION -->
+          <div class="col-sm-6 hide" style="display:none">
+              <div class="well">
+                  <h3><span class="fa fa-user"></span> Local</h3>
+
+                  <% if (user.local.email) { %>
+                      <p>
+                          <strong>id</strong>: <%= user._id %> <br>
+                          <strong>email</strong>: <%= user.local.email %> <br>
+                          <strong>password</strong>: <%= user.local.password %>
+                      </p>
+
+                      <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                  <% } else { %>
+                      <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                  <% } %>
+
               </div>
-              <button id="button" class="submitSongs" type="submit">Submit</button>    
-              <span>Check if final version:</span><input type="radio" id="mark" name="progress">
-  
-                </form>
           </div>
-          <div class="col-sm-6" id="formAnswers">
-            <h2 class="specialSong">Special Songs</h2>
-            <div class="submissionsCard">
-              <ul class="submissions">
-                <% for(var i=0; i<reception.length; i++) {%>
-                  <% let color = reception[i].progress === 'final' ? 'black' : 'gray' %>
-                <li id="<%= color %>" class="song">
 
-                  <b><span><%= reception[i].date %></span></b><br><br>
-                    
-                  <span class="songAnswer"><%= reception[i].parentsIntro %></span><br>
-                  <span class="songCategory">Parents Entrance</span><br><br>
+            <section class="songBody">
+              <div class="form1">
+                <div class="songForm">
+                  <% if (user.local.email) { %>
+                  <form action="/songForm" method="POST">
+                    <p id="songForm">Parents Entrance:</p>
+                    <input id="msgs" type="text" placeholder="e.g. L-O-V-E, Nat King Cole" name="parentsIntro"><br><br>
+        
+                    <p id="songForm">Bridal Party Entrance:</p>
+                    <input id="msgs" type="text" placeholder="e.g. You Make My Dreams, Hall & Oates " name="bridalParty"><br><br>
+        
+                    <p id="songForm">Bride & Groom Entrance:</p>
+                    <input id="msgs" type="text" placeholder="e.g. Knocks Me Off My Feet, Stevie Wonder" name="coupleIntro"><br><br>
+        
+                    <p id="songForm">First Dance:</p>
+                    <input id="msgs" type="text" placeholder="e.g. Your Song, Elton John" name="firstDance"><br><br>
+        
+                    <p id="songForm">Bride & Father Dance:</p>
+                    <input id="msgs" type="text" placeholder="e.g. At Last, Etta James" name="brideDance"><br><br>
+        
+                    <p id="songForm">Groom & Mother Dance:</p>
+                    <input id="msgs" type="text" placeholder="e.g. Remember When, Alan Jackson" name="groomDance"><br><br>
+        
+                    <p id="songForm">Cake Cutting Song:</p>
+                    <input id="msgs" type="text" placeholder="e.g. I Want to Be Evil, Eartha Kitt" name="cakeCutting"><br><br>
+        
+                    <p id="songForm">Last Dance:</p>
+                    <input id="msgs" type="text" placeholder="e.g. Isn't She Lovely, Stevie Wonder" name="lastDance"><br><br>
+        
+                    <p id="songForm">Additional songs:</p>
+                      <input id="msgs" type="text" placeholder="e.g. L-O-V-E (Groom & Daughter Dance)" name="msg"><br><br>
+      
+                      <p id="songForm">Today's date:</p>
+                      <input id="msgs" type="date" name="date"><br><br>
+                  </div>
+                  <button id="button" class="submitSongs" type="submit">Submit</button>    
+                  <span>Check if final version:</span><input type="radio" id="mark" name="progress">
+      
+                    </form>
+              </div>
+              <div class="col-sm-6" id="formAnswers">
+                <div class="submissionsCard">
+                  <ul class="submissions">
+                    <% for(var i=0; i<reception.length; i++) {%>
+                      <% let color = reception[i].progress === 'final' ? 'black' : 'gray' %>
+                    <li id="<%= color %>" class="song">
+
+                      <b><span><%= reception[i].date %></span></b><br><br>
+                        
+                      <span class="songAnswer"><%= reception[i].parentsIntro %></span><br>
+                      <span class="songCategory">Parents Entrance</span><br><br>
+                      
+                      <span class="songAnswer"><%= reception[i].bridalParty %></span><br>
+                      <span class="songCategory">Bridal Party Entrance</span><br><br>
+        
+                      <span class="songAnswer"><%= reception[i].coupleIntro %></span><br>
+                      <span class="songCategory">Bride & Groom Entrance</span><br><br>
+        
+                      <span class="songAnswer"><%= reception[i].firstDance %></span><br>
+                      <span class="songCategory">First Dance</span><br><br>
+        
+                      <span class="songAnswer"><%= reception[i].brideDance %></span><br>
+                      <span class="songCategory">Bride & Father Dance</span><br><br>
+        
+                      <span class="songAnswer"><%= reception[i].groomDance %></span><br>
+                      <span class="songCategory">Groom & Mother Dance</span><br><br>
+        
+                      <span class="songAnswer"><%= reception[i].cakeCutting %></span><br>
+                      <span class="songCategory">Cake Cutting Song</span><br><br>
+        
+                      <span class="songAnswer"><%= reception[i].lastDance %></span><br>
+                      <span class="songCategory">Last Dance</span><br><br>
+        
+                      <span class="songAnswer"><%= reception[i].songs %></span><br>
+                      <span class="songCategory">Additional songs</span><br><br>
+
+                      <i id="<%= reception[i]._id%>" class="fa fa-trash" aria-hidden="true"></i>
+                      <section class="version">
+                        <% if (reception[i].progress === 'final') { %>
+                          <span>Final version: <i class="fa fa-check-circle-o" aria-hidden="true"></i></span>
+                        <% } else { %>
+                          <span>Final version: <i class="fa fa-ban" aria-hidden="true"></i></span>
+                      </section>
+
+                    </li>
+                  </ul>
+
+
+
+                        <% } %>
+      
+
                   
-                  <span class="songAnswer"><%= reception[i].bridalParty %></span><br>
-                  <span class="songCategory">Bridal Party Entrance</span><br><br>
-    
-                  <span class="songAnswer"><%= reception[i].coupleIntro %></span><br>
-                  <span class="songCategory">Bride & Groom Entrance</span><br><br>
-    
-                  <span class="songAnswer"><%= reception[i].firstDance %></span><br>
-                  <span class="songCategory">First Dance</span><br><br>
-    
-                  <span class="songAnswer"><%= reception[i].brideDance %></span><br>
-                  <span class="songCategory">Bride & Father Dance</span><br><br>
-    
-                  <span class="songAnswer"><%= reception[i].groomDance %></span><br>
-                  <span class="songCategory">Groom & Mother Dance</span><br><br>
-    
-                  <span class="songAnswer"><%= reception[i].cakeCutting %></span><br>
-                  <span class="songCategory">Cake Cutting Song</span><br><br>
-    
-                  <span class="songAnswer"><%= reception[i].lastDance %></span><br>
-                  <span class="songCategory">Last Dance</span><br><br>
-    
-                  <span class="songAnswer"><%= reception[i].songs %></span><br>
-                  <span class="songCategory">Additional songs</span><br><br>
-
-                  <i id="<%= reception[i]._id%>" class="fa fa-trash" aria-hidden="true"></i>
-
-                </li>
-                  <section class="version">
-                    <% if (reception[i].progress === 'final') { %>
-                      <span>Final version: <i class="fa fa-check-circle-o" aria-hidden="true"></i></span>
-                    <% } else { %>
-                      <span>Final version: <i class="fa fa-circle-o" aria-hidden="true"></i></span>
-                  </section>
-
-
-                    <% } %>
-  
-
-              </ul>
-            <% } %>
-            </div>
+                <% } %>
+                </div>
+              </div>
+              <% } %>
+            </section>
           </div>
-          <% } %>
         </div>
       </div>
     </div>
-  </div>
+    </div>
 
 
 
 
+          <script src="/public/songs.js"></script>
 
-  <script src="/public/songs.js"></script>
-
-</body>
+  </body>
 
 </html>

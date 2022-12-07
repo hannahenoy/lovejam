@@ -45,53 +45,56 @@
       <button class="submit" type="submit"><i class="fa fa-check btn" aria-hidden="true"></i></button>
     </form>
   </div>
+  <section class="mainProfile">
+    <!-- WELCOME COUNTDOWN -->
+    <section id="welcome">
+      <section id="welcome2">
+      <!-- <h1 class="welcome">Hi again!</h1> -->
 
-  <!-- WELCOME COUNTDOWN -->
-  <section id="welcome">
-    <section id="welcome2">
-    <!-- <h1 class="welcome">Hi again!</h1> -->
-
-    <div class="until" id="myCountdown">
-      <div class="until__component">
-        <span class="until__numeric until__numeric--days">00</span><span> days</span> 
-        <span class="until__numeric until__numeric--hours">00</span><span> hours</span>
-        <span class="until__numeric until__numeric--minutes">00</span><span> minutes</span>
-        <span class="until__numeric until__numeric--seconds">00</span><span> seconds</span><br>
-        
-        <span>until your big day.</span>
+      <div class="until" id="myCountdown">
+        <div class="until__component">
+          <span class="until__numeric until__numeric--days">00</span><span> days</span> 
+          <span class="until__numeric until__numeric--hours">00</span><span> hours</span>
+          <span class="until__numeric until__numeric--minutes">00</span><span> minutes</span>
+          <span class="until__numeric until__numeric--seconds">00</span><span> seconds</span><br>
+          
+          <span>until your big day.</span><br><br>
+        </div>
+        <span class="until__event" style="display:none">Until DD MM YYYY</span>
       </div>
-      <span class="until__event" style="display:none">Until DD MM YYYY</span>
-    </div>
-    <a href="/playlists" class="btn btn-sm playlist-btn">Go to your playlist ⇢</a>
-  </section>
+      <a href="/playlists" class="btn btn-sm playlist-btn">Go to your playlist ⇢</a><br>
+      <a href="/inspo" id="buttonColor" class="btn btn-sm playlist-btn">Create a song planner ⇢</a><br>
+      <a href="/recording" id="buttonColor2" class="btn btn-sm playlist-btn">Record names ⇢</a>
+
+    </section>
 
 
-  <!-- UPLOADED PROFILE PHOTO -->
-  <div class="uploaded">
-    <ul class="messages">
-      <% for(var i=0; i<profilePhoto.length; i++) {%>
-        <li class="photo">
-          <img class="profilePhoto" src="<%= profilePhoto[i].src %>"></span>
-          <div class="middle">
-            <div class="text"><span id="x"><i id="<%=profilePhoto[i]._id%>" class="fa fa-pencil" aria-hidden="true"></i>
+    <!-- UPLOADED PROFILE PHOTO -->
+    <div class="uploaded">
+      <ul class="messages">
+        <% for(var i=0; i<profilePhoto.length; i++) {%>
+          <li class="photo">
+            <img class="profilePhoto" src="<%= profilePhoto[i].src %>"></span>
+            <div class="middle">
+              <div class="text"><span id="x"><i id="<%=profilePhoto[i]._id%>" class="fa fa-pencil" aria-hidden="true"></i>
+              </div>
             </div>
-          </div>
-        </li>
-        <% } %>
-    </ul>
+          </li>
+          <% } %>
+      </ul>
 
-      <!-- FILE UPLOADER -->
-  <section class="uploader">
-    <form method="POST" action="/photo" enctype="multipart/form-data">
-      <label for="file-upload" class="custom-file-upload">
-        <i class="fa fa-camera" aria-hidden="true"></i><br>
-      </label>
-      <input id="file-upload" type="file" name="default-photo" required />
-      <input id="updateProfilePhoto" type="submit" value="UPLOAD" />
-    </form>
+        <!-- FILE UPLOADER -->
+    <section class="uploader">
+      <form method="POST" action="/photo" enctype="multipart/form-data">
+        <label for="file-upload" class="custom-file-upload">
+          <i class="fa fa-camera" aria-hidden="true"></i><br>
+        </label>
+        <input id="file-upload" type="file" name="default-photo" required />
+        <input id="updateProfilePhoto" type="submit" value="UPLOAD" />
+      </form>
+    </section>
+    </div>
   </section>
-  </div>
-
 
 
   <!-- PLACEHOLDER -->
