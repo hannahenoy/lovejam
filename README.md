@@ -2,10 +2,10 @@
 # Wedding Music Planner: <a href="https://lovejam.up.railway.app/" target="_blank">View Demo Here</a>
 
 <p align="center">
-<img src="https://i.imgur.com/06cEIuD.jpg" width="50%">
-<img src="https://i.imgur.com/tHGdIBx.jpg" width="50%">
-<img src="https://i.imgur.com/KWzjwAN.jpg" width="50%">
-<img src="https://i.imgur.com/xm79x0k.jpg" width="50%">
+<img src="https://i.imgur.com/06cEIuD.jpg" width="70%">
+<img src="https://i.imgur.com/tHGdIBx.jpg" width="70%">
+<img src="https://i.imgur.com/KWzjwAN.jpg" width="70%">
+<img src="https://i.imgur.com/xm79x0k.jpg" width="70%">
 
 Music-focused wedding planner providing couples with a suite of features to help plan and execute their special day. With the app, couples can create personalized playlists, submit necessary forms, and even record audio for their ceremony or reception. By leveraging these capabilities, the app aims to simplify the wedding planning process, making it more enjoyable and stress-free for couples.
 
